@@ -7,19 +7,19 @@ from sklearn.model_selection import train_test_split
 
 # Function for model training
 def fit(X, Y, iterations, l1_penality, learning_rate) :
-        # no_of_training_examples, no_of_features
-        m, n = X.shape
-        # weight initialization
-        W = np.zeros( n )          
-        b = 0          
-        X = X          
-        Y = Y          
-        
-        # gradient descent learning
-        for i in range( iterations ) :      
-            W, b = update_weights(X, n, Y, l1_penality, m, learning_rate, W, b)
-              
-        return W, b
+    # no_of_training_examples, no_of_features
+    m, n = X.shape
+    # weight initialization
+    W = np.zeros( n )          
+    b = 0          
+    X = X          
+    Y = Y          
+
+    # gradient descent learning
+    for i in range( iterations ) :      
+        W, b = update_weights(X, n, Y, l1_penality, m, learning_rate, W, b)
+
+    return W, b
 
 # Helper function to update weights in gradient descent
 def update_weights( X, n, Y, l1_penality, m, learning_rate, W, b) :
